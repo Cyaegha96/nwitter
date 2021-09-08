@@ -1,7 +1,8 @@
-import { authService } from "fbase";
+import { authService, dbService } from "fbase";
 import { useHistory } from "react-router";
+import { useEffect } from "react";
 
-const Profile = () => {
+const Profile = ({ userObj }) => {
 
     const history = useHistory();
 
@@ -9,6 +10,7 @@ const Profile = () => {
         authService.signOut();
         history.push('/');
     };
+
 
     return (
         <>
